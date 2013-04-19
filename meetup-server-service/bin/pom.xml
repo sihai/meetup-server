@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.galaxy</groupId>
+		<artifactId>meetup-server</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>meetup-server-service</artifactId>
+	<packaging>jar</packaging>
+	<name>meetup-server-service</name>
+	<url>http://www.galaxy.com</url>
+
+	<dependencies>
+	    
+		<!-- ================================================= -->
+		<!-- 	Meetup server modules 	   		   			   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-util</artifactId>
+		</dependency>			
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-client</artifactId>
+		</dependency>			
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-core</artifactId>
+		</dependency>
+
+		<!-- ================================================= -->
+		<!-- 					tddl 	   		   			   -->
+		<!-- ================================================= -->
+		
+		
+		<!-- ================================================= -->
+		<!-- 					Log 	   					   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		
+		
+		<!-- ================================================= -->
+		<!-- 					spring 	   					   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		
+		<!-- ================================================= -->
+		<!-- 					Unit Test 	   				   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		
+		<!-- ================================================= -->
+		<!-- 					tools 	   					   -->
+		<!-- ================================================= -->
+	</dependencies>
+</project>

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.galaxy</groupId>
+		<artifactId>meetup-server</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>meetup-server-webapp</artifactId>
+	<packaging>war</packaging>
+	<name>meetup</name>
+	<url>http://www.galaxy.com</url>
+
+	<dependencies>
+	    
+		<!-- ================================================= -->
+		<!-- 	Meetup server modules 	   		   			   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-util</artifactId>
+		</dependency>			
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-client</artifactId>
+		</dependency>			
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>meetup-server-service</artifactId>
+		</dependency>
+
+		<!-- ================================================= -->
+		<!-- 					tddl 	   		   			   -->
+		<!-- ================================================= -->
+		
+		
+		<!-- ================================================= -->
+		<!-- 					Log 	   					   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		
+		
+		<!-- ================================================= -->
+		<!-- 					spring 	   					   -->
+		<!-- ================================================= -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.apache.velocity</groupId>
+    		<artifactId>velocity</artifactId>
+		</dependency>
+		
+		<dependency>  
+    		<groupId>net.sf.json-lib</groupId>  
+    		<artifactId>json-lib</artifactId>  
+    		<classifier>jdk15</classifier>  
+		</dependency>
+		
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+			
+		<!-- ================================================= -->
+		<!-- 					tools 	   					   -->
+		<!-- ================================================= -->
+		<dependency>
+     		<groupId>commons-lang</groupId>
+     		<artifactId>commons-lang</artifactId>
+   		</dependency>
+   		
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+			
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>meetup</finalName>
+
+		<filters>
+			<filter>${user.home}/build.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/.svn/*</exclude>
+				</excludes>
+				<!--  <filtering>true</filtering>-->
+			</resource>
+
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+					<include>*.xml</include>
+					<include>*.xsd</include>
+				</includes>
+				<excludes>
+					<exclude>**/.svn/*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>WEB-INF/**/*.xml</include>
+							</includes>
+							<filtering>true</filtering>
+						</resource>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<excludes>
+								<include>WEB-INF/**/*.xml</include>
+							</excludes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
