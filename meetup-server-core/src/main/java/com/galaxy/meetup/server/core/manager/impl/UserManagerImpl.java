@@ -4,12 +4,14 @@
  */
 package com.galaxy.meetup.server.core.manager.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-import com.galaxy.meetup.server.client.domain.User;
 import com.galaxy.meetup.server.client.exception.ValidateException;
+import com.galaxy.meetup.server.client.v2.domain.User;
 import com.galaxy.meetup.server.core.manager.UserManager;
 import com.galaxy.meetup.server.dao.UserDAO;
 
@@ -18,7 +20,7 @@ import com.galaxy.meetup.server.dao.UserDAO;
  * @author sihai
  *
  */
-@Service
+@Component
 public class UserManagerImpl implements UserManager {
 
 	@Resource
@@ -28,6 +30,21 @@ public class UserManagerImpl implements UserManager {
 	public void add(User user) throws ValidateException {
 		validate(user, true);
 		userDAO.insert(user);
+	}
+
+	@Override
+	public User get(String userName) {
+		return userDAO.query(userName);
+	}
+
+	@Override
+	public List<User> getByUserNames(List<String> userNameList) {
+		return userDAO.getByUserNames(userNameList);
+	}
+
+	@Override
+	public List<User> nearby(double longitude, double latitude, int currentPage, int pageSize) {
+		return userDAO.queryNearby(longitude, latitude, currentPage, pageSize);
 	}
 
 	@Override

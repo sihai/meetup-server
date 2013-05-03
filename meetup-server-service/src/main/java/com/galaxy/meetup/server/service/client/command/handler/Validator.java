@@ -6,11 +6,10 @@ package com.galaxy.meetup.server.service.client.command.handler;
 
 import org.springframework.stereotype.Service;
 
-import com.galaxy.meetup.server.client.domain.response.AuthorizeResponse;
 import com.galaxy.meetup.server.core.command.framework.AbstractHandler;
+import com.galaxy.meetup.server.core.command.framework.Before;
 import com.galaxy.meetup.server.core.command.framework.Command;
 import com.galaxy.meetup.server.core.command.framework.ExecutionController;
-import com.galaxy.meetup.server.core.command.framework.Handle;
 import com.galaxy.meetup.server.core.command.framework.Result;
 
 /**
@@ -19,16 +18,12 @@ import com.galaxy.meetup.server.core.command.framework.Result;
  *
  */
 @Service
-@Handle(value = "authorize", index = 0)
-public class AuthorizeHandler extends AbstractHandler {
+@Before(index = 1)
+public class Validator extends AbstractHandler {
 
 	@Override
 	public void handle(Command command, Result result, ExecutionController controller) {
-		// FIXME
-		AuthorizeResponse response = new AuthorizeResponse();
-		response.setSucceed(true);
-		response.setToken("fixme");
-		result.setResponse(response);
-	}
+		// TODO Auto-generated method stub
 
+	}
 }

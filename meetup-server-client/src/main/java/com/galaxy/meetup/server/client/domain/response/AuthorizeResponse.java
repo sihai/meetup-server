@@ -4,14 +4,14 @@
  */
 package com.galaxy.meetup.server.client.domain.response;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 
 /**
  * 
  * @author sihai
  *
  */
-public class AuthorizeResponse extends GenericJson {
+public class AuthorizeResponse extends Response {
 
 	public String token;
 

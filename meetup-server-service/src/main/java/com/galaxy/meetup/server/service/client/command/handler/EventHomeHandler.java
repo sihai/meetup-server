@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Component;
 
 import com.galaxy.meetup.server.client.domain.EmbedsPerson;
 import com.galaxy.meetup.server.client.domain.EventTime;
@@ -24,30 +26,35 @@ import com.galaxy.meetup.server.client.domain.Segment;
 import com.galaxy.meetup.server.client.domain.UserRef;
 import com.galaxy.meetup.server.client.domain.ViewSegments;
 import com.galaxy.meetup.server.client.domain.response.EventsHomeResponse;
+import com.galaxy.meetup.server.client.v2.response.EventHomeResponse;
 import com.galaxy.meetup.server.core.command.framework.AbstractHandler;
 import com.galaxy.meetup.server.core.command.framework.Command;
 import com.galaxy.meetup.server.core.command.framework.ExecutionController;
 import com.galaxy.meetup.server.core.command.framework.Handle;
 import com.galaxy.meetup.server.core.command.framework.Result;
+import com.galaxy.meetup.server.service.EventService;
 
 /**
  * 
  * @author sihai
  *
  */
-@Service
+@Component
 @Handle(value = "eventhome", index = 0)
 public class EventHomeHandler extends AbstractHandler {
 
 	static String URL_PREFIX = "http://192.168.10.101";
 	
+	@Resource
+	private EventService eventService;
+	
 	@Override
 	public void handle(Command command, Result result, ExecutionController controller) {
-		// FIXME
-		EventsHomeResponse response = mock();
+		EventHomeResponse response = new EventHomeResponse();
+		response.setRunningEventList(eventService.getRunningEventOfJoiner(command.getUser().getName()));
+		response.setUpcomingEventList(eventService.getUpcomingEventOfJoiner(command.getUser().getName()));
 		response.setSucceed(true);
-		result.setSucceed(true);
-		result.setData(response);
+		result.setResponse(response);
 	}
 
 	/**
@@ -73,7 +80,7 @@ public class EventHomeHandler extends AbstractHandler {
 	private List<PlusEvent> _mock_plus_event_list(int type, int size) {
 		List<PlusEvent> eventList = new ArrayList<PlusEvent>(size);
 		for(int i = 0; i < size; i++) {
-			eventList.add(_mock_plus_event(type));
+			eventList.add(_mock_plus_event(String.format("Mocked event: %d", i), type));
 		}
 		return eventList;
 	}
@@ -93,11 +100,11 @@ public class EventHomeHandler extends AbstractHandler {
 	}
 	
 	/**
-	 * 
+	 * @param name
 	 * @param type
 	 * @return
 	 */
-	private PlusEvent _mock_plus_event(int type) {
+	private PlusEvent _mock_plus_event(String name, int type) {
 		PlusEvent event = new PlusEvent();
 		event.setAuthKey("authKey");
 		EmbedsPerson person = new EmbedsPerson();
@@ -155,7 +162,7 @@ public class EventHomeHandler extends AbstractHandler {
 		displayContent.setVideoEmbedUrl(URL_PREFIX + "/video.jhtml");
 		event.setDisplayContent(displayContent);
 		event.setId("event_id" + UUID.randomUUID().toString());
-		event.setName("Mocked event");
+		event.setName(name);
 		event.setIsPublic(true);
 		Place location = new Place();
 		event.setLocation(location);

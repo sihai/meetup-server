@@ -1,0 +1,14 @@
+use meetup;
+db.addUser("meetup", "meetup");
+db.createCollecion("user");
+db.user.ensureIndex({ name : 1 });
+db.user.ensureIndex({ currentLocation : "2d" });
+
+db.createCollecion("event");
+db.user.ensureIndex({ publisher : 1 });
+db.user.ensureIndex({ location : "2d" });
+
+
+db.createCollecion("event_member");
+db.user.ensureIndex({ eventId : 1 });
+db.user.ensureIndex({ userName : 1 });

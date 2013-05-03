@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.core.command.framework.Dispatcher;
 import com.galaxy.meetup.server.core.command.framework.Result;
 import com.galaxy.meetup.server.core.command.framework.ResultFactory;
@@ -72,13 +72,13 @@ public class Gateway extends AbstractController {
 		try {
 			response.setContentType("text/json;charset=UTF-8");
 			writer = response.getWriter();
-			if(null == result.getData()) {
-				GenericJson data = new GenericJson();
-				data.setSucceed(result.isSucceed());
-				data.setErrorMsg(data.getErrorMsg());
-				result.setData(data);
+			if(null == result.getResponse()) {
+				Response r = new Response();
+				r.setSucceed(result.isSucceed());
+				r.setErrorMsg(result.getErrorMsg());
+				result.setResponse(r);
 			}
-			writer.write(gson.toJson(result.getData()));
+			writer.write(gson.toJson(result.getResponse()));
 			writer.flush();
 		} finally {
 			if(null != writer) {

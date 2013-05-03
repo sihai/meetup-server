@@ -2,17 +2,14 @@
  * galaxy inc.
  * meetup server
  */
-package com.galaxy.meetup.server.core.command.framework;
-
-import com.galaxy.meetup.server.client.v2.response.Response;
-
+package com.galaxy.meetup.server.client.v2.response;
 
 /**
  * 
  * @author sihai
  *
  */
-public class Result {
+public class Response {
 
 	/**
 	 * 
@@ -23,11 +20,6 @@ public class Result {
 	 * 
 	 */
 	private String errorMsg;
-	
-	/**
-	 * 
-	 */
-	private Response response;
 
 	public boolean isSucceed() {
 		return isSucceed;
@@ -43,13 +35,5 @@ public class Result {
 
 	public void setErrorMsg(String errorMsg) {
 		this.errorMsg = errorMsg;
-	}
-
-	public Response getResponse() {
-		return response;
-	}
-
-	public void setResponse(Response response) {
-		this.response = response;
 	}
 }

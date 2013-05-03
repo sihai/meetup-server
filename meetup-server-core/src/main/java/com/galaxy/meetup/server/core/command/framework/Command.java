@@ -4,7 +4,7 @@
  */
 package com.galaxy.meetup.server.core.command.framework;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.domain.User;
 import com.galaxy.meetup.server.core.client.ClientInfo;
 
 /**
@@ -24,6 +24,12 @@ public interface Command {
 	 * 
 	 * @return
 	 */
+	User getUser();
+	
+	/**
+	 * 
+	 * @return
+	 */
 	String getCommand();
 	
 	/**
@@ -37,5 +43,5 @@ public interface Command {
 	 * 
 	 * @return
 	 */
-	<T extends GenericJson> T getRequest(Class<? extends GenericJson> clazz);
+	<T> T getRequest(Class clazz);
 }

@@ -4,7 +4,8 @@
  */
 package com.galaxy.meetup.server.core.command.framework;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
+
 
 /**
  * 
@@ -30,7 +31,7 @@ public class ResultFactory {
 		Result result = new Result();
 		result.setSucceed(false);
 		result.setErrorMsg(errorMsg);
-		result.setData(new GenericJson());
+		result.setResponse(null);
 		return result;
 	}
 	
@@ -46,10 +47,10 @@ public class ResultFactory {
 	 * @param response
 	 * @return
 	 */
-	public static Result succeed(GenericJson response) {
+	public static Result succeed(Response response) {
 		Result result = new Result();
 		result.setSucceed(true);
-		result.setData(response);
+		result.setResponse(response);
 		return result;
 	}
 }

@@ -9,8 +9,8 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
 import com.galaxy.meetup.server.client.util.JsonUtil;
+import com.galaxy.meetup.server.client.v2.domain.User;
 import com.galaxy.meetup.server.core.client.ClientInfo;
 
 /**
@@ -30,30 +30,35 @@ public class DefaultCommand extends AbstractCommand {
 	 */
 	private InputStream inputStream;
 	
+	/**
+	 * 
+	 */
 	private String rawRequest;
 	
 	/**
 	 * 
 	 */
-	private GenericJson request;
+	private Object request;
 	
 	/**
 	 * 
 	 * @param clientInfo
+	 * @param user
 	 * @param command
 	 */
-	public DefaultCommand(ClientInfo clientInfo, String command) {
-		this(clientInfo, command, null, null);
+	public DefaultCommand(ClientInfo clientInfo, User user, String command) {
+		this(clientInfo, user, command, null, null);
 	}
 	
 	/**
 	 * 
 	 * @param clientInfo
+	 * @param user
 	 * @param command
 	 * @param inputStream
 	 */
-	public DefaultCommand(ClientInfo clientInfo, String command, String rawRequest, InputStream inputStream) {
-		super(clientInfo, command);
+	public DefaultCommand(ClientInfo clientInfo, User user, String command, String rawRequest, InputStream inputStream) {
+		super(clientInfo, user, command);
 		this.rawRequest = rawRequest;
 		this.inputStream = inputStream;
 	}
@@ -88,9 +93,9 @@ public class DefaultCommand extends AbstractCommand {
 	}
 
 	@Override
-	public <T extends GenericJson> T getRequest(Class<? extends GenericJson> clazz) {
+	public <T> T getRequest(Class clazz) {
 		if(null == request) {
-			request = (GenericJson)JsonUtil.toBean(this.rawRequest, clazz);
+			request = (T)JsonUtil.toBean(this.rawRequest, clazz);
 		}
 		return (T)request;
 	}
@@ -100,7 +105,7 @@ public class DefaultCommand extends AbstractCommand {
 	 * @param clazz
 	 * @throws IOException
 	 */
-	private void parseRequest(Class<? extends GenericJson> clazz) throws IOException {
-		request = (GenericJson)JsonUtil.fromInputStream(this.inputStream, clazz);
+	private void parseRequest(Class clazz) throws IOException {
+		request = JsonUtil.fromInputStream(this.inputStream, clazz);
 	}
 }

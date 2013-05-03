@@ -4,7 +4,10 @@
  */
 package com.galaxy.meetup.server.dao;
 
-import com.galaxy.meetup.server.client.domain.User;
+import java.util.List;
+
+import com.galaxy.meetup.server.client.v2.domain.User;
+
 
 /**
  * 
@@ -18,6 +21,30 @@ public interface UserDAO {
 	 * @param user
 	 */
 	void insert(User user);
+	
+	/**
+	 * 
+	 * @param userName
+	 * @return
+	 */
+	User query(String userName);
+	
+	/**
+	 * 
+	 * @param userNameList
+	 * @return
+	 */
+	List<User> getByUserNames(List<String> userNameList);
+	
+	/**
+	 * 
+	 * @param longitude
+	 * @param latitude
+	 * @param currentPage
+	 * @param pageSize
+	 * @return
+	 */
+	List<User> queryNearby(double longitude, double latitude, int currentPage, int pageSize);
 	
 	/**
 	 * 
