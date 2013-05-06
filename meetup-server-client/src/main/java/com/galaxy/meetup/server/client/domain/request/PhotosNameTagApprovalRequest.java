@@ -5,14 +5,14 @@
 package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  * 
  */
-public class PhotosNameTagApprovalRequest extends GenericJson {
+public class PhotosNameTagApprovalRequest extends Request {
 
 	public Boolean approve;
 	public ApiaryFields commonFields;

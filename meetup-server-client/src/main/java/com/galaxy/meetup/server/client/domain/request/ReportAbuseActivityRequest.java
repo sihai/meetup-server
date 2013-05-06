@@ -8,14 +8,14 @@ import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.DataAbuseReport;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  * 
  */
-public class ReportAbuseActivityRequest extends GenericJson {
+public class ReportAbuseActivityRequest extends Request {
 
 	public DataAbuseReport abuseReport;
 	public ApiaryFields commonFields;

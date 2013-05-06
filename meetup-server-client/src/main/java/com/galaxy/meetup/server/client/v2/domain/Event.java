@@ -4,7 +4,8 @@
  */
 package com.galaxy.meetup.server.client.v2.domain;
 
-import java.util.Date;
+import java.util.List;
+
 
 /**
  * 
@@ -19,6 +20,11 @@ public class Event extends BaseDO {
 	private static final long serialVersionUID = -8223704298376548538L;
 
 	/**
+	 * 
+	 */
+	private String authKey;
+	
+	/**
 	 * Name of this event
 	 */
 	private String name;
@@ -31,12 +37,17 @@ public class Event extends BaseDO {
 	/**
 	 * Start time for this event
 	 */
-	private Date startTime;
+	private EventTime startTime;
 	
 	/**
 	 * End time for this event
 	 */
-	private Date endTime;
+	private EventTime endTime;
+	
+	/**
+	 * 
+	 */
+	private boolean isPublic;
 	
 	/**
 	 * Location for this event
@@ -54,6 +65,39 @@ public class Event extends BaseDO {
 	 */
 	private String publisher;
 	
+	/**
+	 * 
+	 */
+	private ThemeSpecification themeSpecification;
+	
+	/**
+	 * 
+	 */
+	private Theme theme;
+	
+	/**
+	 * 
+	 */
+	private HangoutInfo hangoutInfo;
+	
+	/**
+	 * 
+	 */
+	private EventOptions options;
+	
+	/**
+	 * All joiners
+	 */
+	private List<EventMember> memberList;
+	
+	public String getAuthKey() {
+		return authKey;
+	}
+
+	public void setAuthKey(String authKey) {
+		this.authKey = authKey;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -70,22 +114,30 @@ public class Event extends BaseDO {
 		this.description = description;
 	}
 
-	public Date getStartTime() {
+	public EventTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Date startTime) {
+	public void setStartTime(EventTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public Date getEndTime() {
+	public EventTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Date endTime) {
+	public void setEndTime(EventTime endTime) {
 		this.endTime = endTime;
 	}
 
+	public boolean isPublic() {
+		return isPublic;
+	}
+
+	public void setPublic(boolean isPublic) {
+		this.isPublic = isPublic;
+	}
+	
 	public Location getLocation() {
 		return location;
 	}
@@ -108,5 +160,45 @@ public class Event extends BaseDO {
 
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+	
+	public ThemeSpecification getThemeSpecification() {
+		return themeSpecification;
+	}
+
+	public void setThemeSpecification(ThemeSpecification themeSpecification) {
+		this.themeSpecification = themeSpecification;
+	}
+	
+	public Theme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(Theme theme) {
+		this.theme = theme;
+	}
+	
+	public HangoutInfo getHangoutInfo() {
+		return hangoutInfo;
+	}
+
+	public void setHangoutInfo(HangoutInfo hangoutInfo) {
+		this.hangoutInfo = hangoutInfo;
+	}
+	
+	public EventOptions getOptions() {
+		return options;
+	}
+
+	public void setOptions(EventOptions options) {
+		this.options = options;
+	}
+	
+	public List<EventMember> getMemberList() {
+		return memberList;
+	}
+
+	public void setMemberList(List<EventMember> memberList) {
+		this.memberList = memberList;
 	}
 }

@@ -6,7 +6,7 @@ package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.ClientEmbedOptions;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.StreamParams;
 
 
@@ -15,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.StreamParams;
  * @author sihai
  * 
  */
-public class GetActivitiesRequest extends GenericJson {
+public class GetActivitiesRequest extends Request {
 
 	public ApiaryFields commonFields;
 	public String continuesToken;

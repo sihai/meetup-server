@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.EntitySquaresDataSquare;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 
 /**
@@ -13,7 +13,7 @@ import com.galaxy.meetup.server.client.domain.GenericJson;
  * @author sihai
  *
  */
-public class EntitySquaresDataSquareMembershipRequest extends GenericJson {
+public class EntitySquaresDataSquareMembershipRequest extends Request {
 
 	public String requesterOid;
 	

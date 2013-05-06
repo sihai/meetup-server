@@ -6,7 +6,7 @@ package com.galaxy.meetup.server.client.domain.response;
 
 import java.util.List;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
 /**
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  * 
  */
-public class GetAudienceResponse extends GenericJson {
+public class GetAudienceResponse extends Response {
 
 	public String aclJson;
 	public TraceRecords backendTrace;

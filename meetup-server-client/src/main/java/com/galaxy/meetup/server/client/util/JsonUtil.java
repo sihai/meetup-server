@@ -8,13 +8,24 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.domain.Event;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 
 /**
  * 
@@ -31,10 +42,13 @@ public class JsonUtil {
 	private static Gson gson2;
 	
 	static {
+		DateAdapter dateAdapter = new DateAdapter();
 		GsonBuilder builder = new GsonBuilder();
+		builder.registerTypeAdapter(Date.class, dateAdapter);
         gson = builder.create();
         MyExclusionStrategy strategy = new MyExclusionStrategy(null, GenericJson.getFiledNameList());
         GsonBuilder builder2 = new GsonBuilder().addSerializationExclusionStrategy(strategy);
+        builder2.registerTypeAdapter(Date.class, dateAdapter);
         gson2 = builder2.create();
 	}
 	
@@ -68,7 +82,7 @@ public class JsonUtil {
 	 * @param jsonString
 	 * @return
 	 */
-	public static Object toBean(String jsonString, Class clazz) {
+	public static Object toBean(String jsonString, @SuppressWarnings("rawtypes") Class clazz) {
 		return gson.fromJson(jsonString, clazz);
 	}
 	
@@ -132,5 +146,25 @@ public class JsonUtil {
 	        return null != fileds2Skip && fileds2Skip.contains(fieldName);
 	    }  
 	  
-	}  
+	} 
+	
+	public static class DateAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
+
+		@Override
+		public JsonElement serialize(Date date, Type type, JsonSerializationContext context) {
+			return new JsonPrimitive(DateUtil.format(date));
+		}
+
+		@Override
+		public Date deserialize(JsonElement element, Type type, JsonDeserializationContext context) throws JsonParseException {
+			try {
+				return DateUtil.parse(element.getAsString());
+			} catch (ParseException e) {
+				// TODO
+			}
+			return null;
+		}
+	}
+	
+	
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.galaxy.meetup.server.client.exception.MeetupException;
 import com.galaxy.meetup.server.client.v2.domain.Event;
+import com.galaxy.meetup.server.client.v2.request.PublishEventRequest;
 import com.galaxy.meetup.server.client.v2.response.PublishEventResponse;
 import com.galaxy.meetup.server.core.command.framework.AbstractHandler;
 import com.galaxy.meetup.server.core.command.framework.Command;
@@ -24,7 +25,7 @@ import com.galaxy.meetup.server.service.EventService;
  *
  */
 @Service
-@Handle(value = "postactivity", index = 0)
+@Handle(value = "publish_event", index = 0)
 public class PublishEventHandler extends AbstractHandler {
 
 	@Resource
@@ -32,12 +33,13 @@ public class PublishEventHandler extends AbstractHandler {
 	
 	@Override
 	public void handle(Command command, Result result, ExecutionController controller) {
-		Event event = command.getRequest(Event.class);
+		PublishEventRequest request = command.getRequest(PublishEventRequest.class);
 		PublishEventResponse response = new PublishEventResponse();
 		try {
+			Event event = request.getEvent();
 			eventService.publish(event);
 			response.setEvent(event);
-			result.setSucceed(true);
+			response.setSucceed(true);
 		} catch (MeetupException e) {
 			response.setSucceed(false);
 			response.setErrorMsg(e.getMessage());

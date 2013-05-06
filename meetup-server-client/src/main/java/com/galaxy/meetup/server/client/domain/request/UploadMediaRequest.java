@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.LocalData;
 import com.galaxy.meetup.server.client.domain.ScottyMedia;
 
@@ -15,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.ScottyMedia;
  * @author sihai
  * 
  */
-public class UploadMediaRequest extends GenericJson {
+public class UploadMediaRequest extends Request {
 
 	public String albumId;
 	public String albumLabel;

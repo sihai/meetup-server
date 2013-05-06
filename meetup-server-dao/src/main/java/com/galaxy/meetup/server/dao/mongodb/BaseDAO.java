@@ -53,7 +53,7 @@ public abstract class BaseDAO {
 	public final <T> T query4Object(List<QueryParameter> paramters) {
 		DBObject o = template.query4Object(getCollectionName(), paramters);
 		if(null != o) {
-			return (T)toBean(o.toString());
+			return (T)_to_bean(o);
 		}
 		return null;
 	}
@@ -66,7 +66,7 @@ public abstract class BaseDAO {
 		List<DBObject> oList = template.query4List(getCollectionName(), paramters, sort, currentPage, pageSize);
 		List<T> bList = new ArrayList<T>(oList.size());
 		for(DBObject o : oList) {
-			bList.add((T)toBean(o.toString()));
+			bList.add((T)_to_bean(o));
 		}
 		return bList;
 	}
@@ -86,6 +86,27 @@ public abstract class BaseDAO {
 	 */
 	public int delete(List<QueryParameter> paramters) {
 		return template.delete(getCollectionName(), paramters);
+	}
+	
+	/**
+	 * 
+	 * @param o
+	 */
+	private void transformObjectId(DBObject o) {
+		Object v = o.get(MongoClientTemplate.MONGODB_ID);
+		if(null != v) {
+			o.put(MongoClientTemplate.MONGODB_ID, v.toString());
+		}
+	}
+	
+	/**
+	 * 
+	 * @param o
+	 * @return
+	 */
+	private Object _to_bean(DBObject o) {
+		transformObjectId(o);
+		return toBean(o.toString());
 	}
 	
 	/**

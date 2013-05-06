@@ -8,14 +8,14 @@ import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.EventSelector;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  * 
  */
-public class EventManageGuestsRequest extends GenericJson {
+public class EventManageGuestsRequest extends Request {
 
 	public String actionType;
 	public ApiaryFields commonFields;

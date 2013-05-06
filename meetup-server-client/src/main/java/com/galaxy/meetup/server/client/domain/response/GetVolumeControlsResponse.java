@@ -4,7 +4,7 @@
  */
 package com.galaxy.meetup.server.client.domain.response;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 import com.galaxy.meetup.server.client.domain.VolumeControlMap;
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.VolumeControlMap;
  * @author sihai
  * 
  */
-public class GetVolumeControlsResponse extends GenericJson {
+public class GetVolumeControlsResponse extends Response {
 
 	public TraceRecords backendTrace;
 	public VolumeControlMap map;

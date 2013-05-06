@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.response;
 
 import com.galaxy.meetup.server.client.domain.DataRevertCookie;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  *
  */
-public class DeleteCircleResponse extends GenericJson {
+public class DeleteCircleResponse extends Response {
 
 	public TraceRecords backendTrace;
 	

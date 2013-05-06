@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.response;
 
 import com.galaxy.meetup.server.client.domain.DataPhoto;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.ScottyInfo;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
@@ -15,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  * 
  */
-public class UploadMediaResponse extends GenericJson {
+public class UploadMediaResponse extends Response {
 
 	public TraceRecords backendTrace;
 	public DataPhoto photo;

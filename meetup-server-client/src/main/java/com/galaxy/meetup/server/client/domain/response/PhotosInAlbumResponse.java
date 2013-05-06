@@ -9,7 +9,7 @@ import java.util.List;
 import com.galaxy.meetup.server.client.domain.DataAlbum;
 import com.galaxy.meetup.server.client.domain.DataPhoto;
 import com.galaxy.meetup.server.client.domain.DataUser;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
 /**
@@ -17,7 +17,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  * 
  */
-public final class PhotosInAlbumResponse extends GenericJson {
+public final class PhotosInAlbumResponse extends Response {
 
 	public DataAlbum album;
 	public TraceRecords backendTrace;

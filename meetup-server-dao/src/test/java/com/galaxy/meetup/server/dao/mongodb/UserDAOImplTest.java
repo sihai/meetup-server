@@ -39,11 +39,11 @@ public class UserDAOImplTest extends BaseTestCase {
 		user.setPassword("123456");
 		Location location = new Location();
 		location.setZip("434000");
-		location.setStreet("ÔÀÇÅ´å3×é9ºÅ£¬¹Ø¾ÚÏç");
-		location.setDistrict("É³ÊĞÇø");
-		location.setCity("¾£ÖİÊĞ");
-		location.setProvince("ºş±±Ê¡");
-		location.setCountry("ÖĞ¹ú");
+		location.setStreet("å²³æ¡¥æ‘3ç»„9å·ï¼Œå…³æ²®ä¹¡");
+		location.setDistrict("æ²™å¸‚åŒº");
+		location.setCity("è†å·å¸‚");
+		location.setProvince("æ¹–åŒ—çœ");
+		location.setCountry("ä¸­å›½");
 		location.setLatitude(32.00D);
 		location.setLongitude(123.00D);
 		user.setCurrentLocation(location);

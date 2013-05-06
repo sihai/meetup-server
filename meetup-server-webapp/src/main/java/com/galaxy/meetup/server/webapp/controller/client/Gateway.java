@@ -10,6 +10,8 @@ import java.io.Writer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,6 +35,8 @@ import com.google.gson.GsonBuilder;
 @Service("gateway")
 public class Gateway extends AbstractController {
 	
+	private static final Log logger = LogFactory.getLog(Gateway.class);
+	
 	private static Gson gson;
 	
 	@Autowired
@@ -54,6 +58,7 @@ public class Gateway extends AbstractController {
 			result = ResultFactory.error(e.getMessage());
 		} catch (Throwable t) {
 			result = ResultFactory.error();
+			logger.error("OOPS", t);
 		}
 		
 		response(result, response);

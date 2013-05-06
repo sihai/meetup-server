@@ -6,7 +6,7 @@ package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.EditSegments;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 
 /**
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.GenericJson;
  * @author sihai
  * 
  */
-public class PostCommentRequest extends GenericJson {
+public class PostCommentRequest extends Request {
 
 	public String activityId;
 	public String botGuardResponse;

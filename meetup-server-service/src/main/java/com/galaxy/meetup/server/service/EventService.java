@@ -9,7 +9,6 @@ import java.util.List;
 import com.galaxy.meetup.server.client.exception.MeetupException;
 import com.galaxy.meetup.server.client.v2.domain.Event;
 import com.galaxy.meetup.server.client.v2.domain.Location;
-import com.galaxy.meetup.server.client.v2.domain.User;
 
 /**
  * 
@@ -27,24 +26,6 @@ public interface EventService {
 	
 	/**
 	 * 
-	 * @param publisher
-	 * @param currentPage
-	 * @param pageSize
-	 * @return
-	 */
-	List<Event> getEventOfPublisher(String publisher, int currentPage, int pageSize);
-	
-	/**
-	 * 
-	 * @param joiner
-	 * @param currentPage
-	 * @param pageSize
-	 * @return
-	 */
-	List<Event> getEventOfJoiner(String joiner, int currentPage, int pageSize);
-	
-	/**
-	 * 
 	 * @param location
 	 * @param currentPage
 	 * @param pageSize
@@ -54,12 +35,10 @@ public interface EventService {
 	
 	/**
 	 * 
-	 * @param eventId
-	 * @param currentPage
-	 * @param pageSize
+	 * @param idList
 	 * @return
 	 */
-	List<User> getJoiners(String eventId, int currentPage, int pageSize);
+	List<Event> getByIdList(List<String> idList);
 	
 	/**
 	 * 
@@ -68,17 +47,4 @@ public interface EventService {
 	 */
 	void update(Event event) throws MeetupException;
 	
-	/**
-	 * 
-	 * @param userName
-	 * @return
-	 */
-	List<Event> getRunningEventOfJoiner(String userName);
-	
-	/**
-	 * 
-	 * @param userName
-	 * @return
-	 */
-	List<Event> getUpcomingEventOfJoiner(String userName);
 }

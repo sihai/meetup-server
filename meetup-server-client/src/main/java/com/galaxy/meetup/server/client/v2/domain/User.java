@@ -4,7 +4,9 @@
  */
 package com.galaxy.meetup.server.client.v2.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -49,6 +51,21 @@ public class User extends BaseDO {
 	//================================================================
 	
 	private Location currentLocation;
+	
+	/**
+	 * 
+	 */
+	private List<String> publishedEventIdList;
+	
+	/**
+	 * Pasted joined events
+	 */
+	private List<EventMember> pastJoinedEventList;
+	
+	/**
+	 * Running joined events
+	 */
+	private List<EventMember> runningJoinedEventList;
 	
 	public String getName() {
 		return name;
@@ -96,5 +113,40 @@ public class User extends BaseDO {
 
 	public void setCurrentLocation(Location currentLocation) {
 		this.currentLocation = currentLocation;
+	}
+
+	public List<String> getPublishedEventIdList() {
+		return publishedEventIdList;
+	}
+
+	public void setPublishedEventIdList(List<String> publishedEventIdList) {
+		this.publishedEventIdList = publishedEventIdList;
+	}
+
+	public List<EventMember> getPastJoinedEventList() {
+		return pastJoinedEventList;
+	}
+
+	public void setPastJoinedEventList(List<EventMember> pastJoinedEventList) {
+		this.pastJoinedEventList = pastJoinedEventList;
+	}
+
+	public List<EventMember> getRunningJoinedEventList() {
+		return runningJoinedEventList;
+	}
+
+	public void setRunningJoinedEventList(List<EventMember> runningJoinedEventList) {
+		this.runningJoinedEventList = runningJoinedEventList;
+	}
+	
+	
+	//=================================================================
+	//
+	//=================================================================
+	public void addPublishedEventId(String eventId) {
+		if(null == this.publishedEventIdList) {
+			this.publishedEventIdList = new ArrayList<String>();
+		}
+		this.publishedEventIdList.add(eventId);
 	}
 }

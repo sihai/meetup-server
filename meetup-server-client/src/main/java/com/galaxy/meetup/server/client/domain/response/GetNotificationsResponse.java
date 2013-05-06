@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.response;
 
 import com.galaxy.meetup.server.client.domain.DataNotificationsData;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 import com.galaxy.meetup.server.client.domain.ViewerData;
 
@@ -15,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.ViewerData;
  * @author sihai
  * 
  */
-public class GetNotificationsResponse extends GenericJson {
+public class GetNotificationsResponse extends Response {
 
 	public TraceRecords backendTrace;
 	public DataNotificationsData notificationsData;

@@ -7,7 +7,7 @@ package com.galaxy.meetup.server.client.domain.response;
 import com.galaxy.meetup.server.client.domain.DataPersonList;
 import com.galaxy.meetup.server.client.domain.DataSystemGroups;
 import com.galaxy.meetup.server.client.domain.DataViewerCircles;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
 
@@ -16,7 +16,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  * 
  */
-public class LoadSocialNetworkResponse extends GenericJson {
+public class LoadSocialNetworkResponse extends Response {
 
 	public TraceRecords backendTrace;
 	public DataPersonList personList;

@@ -4,7 +4,7 @@
  */
 package com.galaxy.meetup.server.client.domain.response;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 
 
 /**
@@ -12,7 +12,7 @@ import com.galaxy.meetup.server.client.domain.GenericJson;
  * @author sihai
  *
  */
-public class SetResponseWhoCanNotifyResponse extends GenericJson {
+public class SetResponseWhoCanNotifyResponse extends Response {
 
 	public String aclJson;
 

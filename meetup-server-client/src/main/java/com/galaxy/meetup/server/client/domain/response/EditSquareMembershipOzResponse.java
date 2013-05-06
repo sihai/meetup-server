@@ -4,7 +4,7 @@
  */
 package com.galaxy.meetup.server.client.domain.response;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 import com.galaxy.meetup.server.client.domain.ViewerSquare;
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.ViewerSquare;
  * @author sihai
  *
  */
-public class EditSquareMembershipOzResponse extends GenericJson {
+public class EditSquareMembershipOzResponse extends Response {
 
 	public TraceRecords backendTrace;
 	

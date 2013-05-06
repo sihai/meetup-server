@@ -4,7 +4,7 @@
  */
 package com.galaxy.meetup.server.client.domain.response;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 import com.galaxy.meetup.server.client.domain.Update;
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.Update;
  * @author sihai
  *
  */
-public class EditActivityResponse extends GenericJson {
+public class EditActivityResponse extends Response {
 
 	public TraceRecords backendTrace;
 	

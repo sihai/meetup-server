@@ -1,0 +1,14 @@
+1. register
+http://127.0.0.1:8080/gateway.jhtml?_user_={"name":"sihai", "password":"378206", "gender":1, "birthday":"1987-03-20"}&_command_=register_user
+
+2. publish current location
+http://127.0.0.1:8080/gateway.jhtml?_user_={"name":"sihai", "password":"378206", "gender":1, "birthday":"1987-03-20"}&_command_=publish_user_current_location&_request_={"currentLocation":{"longitude":120.00, "latitude":30.00}}
+
+3. search nearby people
+http://127.0.0.1:8080/gateway.jhtml?_user_={"name":"sihai"}&_command_=search_nearby_people&_request_={"location":{"longitude":120.00, "latitude":30.00}, "currentPage":1, "pageSize":20}
+
+4. publish event
+http://127.0.0.1:8080/gateway.jhtml?_user_={"name":"sihai", "password":"378206", "gender":1, "birthday":"1987-03-20"}&_command_=publish_event&_request_={"event":{"name":"event0", "description":"event for test", "startTime":"2013-05-05 08:00:00", "endTime":"2013-05-05 18:00:00", "location":{"longitude":120.00, "latitude":30.00}, "status":0, "publisher":"sihai"}}
+
+5. search nearby event
+http://127.0.0.1:8080/gateway.jhtml?_user_={"name":"sihai"}&_command_=search_nearby_event&_request_={"location":{"longitude":120.00, "latitude":30.00}, "currentPage":1, "pageSize":20}

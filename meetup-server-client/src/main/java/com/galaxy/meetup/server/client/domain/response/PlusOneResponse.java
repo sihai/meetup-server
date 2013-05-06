@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.response;
 
 import com.galaxy.meetup.server.client.domain.DataPlusOne;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  * 
  */
-public class PlusOneResponse extends GenericJson {
+public class PlusOneResponse extends Response {
 
 	public TraceRecords backendTrace;
 	public DataPlusOne plusOne;

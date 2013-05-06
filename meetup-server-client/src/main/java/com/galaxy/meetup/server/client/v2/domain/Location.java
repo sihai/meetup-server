@@ -4,6 +4,8 @@
  */
 package com.galaxy.meetup.server.client.v2.domain;
 
+import com.galaxy.meetup.server.util.StringUtil;
+
 /**
  * 地点数据
  * @author sihai
@@ -116,5 +118,17 @@ public class Location {
 
 	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
+	}
+	
+	//===========================================================
+	//				
+	//===========================================================
+	public String buildAddress() {
+		return String.format("%s, %s, %s, %s, %s, zip:%s", StringUtil.isNotBlank(street) ? street : "",
+				StringUtil.isNotBlank(district) ? district : "",
+				StringUtil.isNotBlank(city) ? city : "",
+				StringUtil.isNotBlank(province) ? province : "",
+				StringUtil.isNotBlank(country) ? country : "",
+				StringUtil.isNotBlank(zip) ? zip : "");
 	}
 }

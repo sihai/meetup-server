@@ -39,7 +39,7 @@ public class UserLogin extends AbstractHandler {
 			response.setUser(serverUser);
 		} else {
 			response.setSucceed(false);
-			response.setErrorMsg("用户名或密码错误");
+			response.setErrorMsg("鐢ㄦ埛鍚嶆垨瀵嗙爜閿欒");
 		}
 			
 		result.setResponse(response);

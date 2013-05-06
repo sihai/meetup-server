@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.DataCircleId;
 import com.galaxy.meetup.server.client.domain.DataRevertCookie;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
 
 /**
@@ -16,7 +16,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  *
  */
-public class CreateCircleResponse extends GenericJson {
+public class CreateCircleResponse extends Response {
 
 	public TraceRecords backendTrace;
 	

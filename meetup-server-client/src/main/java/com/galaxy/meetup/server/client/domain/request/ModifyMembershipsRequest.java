@@ -8,14 +8,14 @@ import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.DataCircleMembershipModificationParams;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  * 
  */
-public class ModifyMembershipsRequest extends GenericJson {
+public class ModifyMembershipsRequest extends Request {
 
 	public DataCircleMembershipModificationParams circleMembershipModificationParams;
 	public List circleToAdd;

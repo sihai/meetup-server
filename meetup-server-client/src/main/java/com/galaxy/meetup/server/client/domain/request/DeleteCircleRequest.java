@@ -7,14 +7,15 @@ package com.galaxy.meetup.server.client.domain.request;
 import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  *
  */
-public class DeleteCircleRequest extends GenericJson {
+public class DeleteCircleRequest extends Request {
 
 	public List circleId;
 	

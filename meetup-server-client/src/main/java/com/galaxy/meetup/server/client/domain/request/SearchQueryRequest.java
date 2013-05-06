@@ -7,7 +7,7 @@ package com.galaxy.meetup.server.client.domain.request;
 import com.galaxy.meetup.server.client.domain.ActivityRequestData;
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.ClientEmbedOptions;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.PeopleRequestData;
 import com.galaxy.meetup.server.client.domain.SearchQuery;
 
@@ -17,7 +17,7 @@ import com.galaxy.meetup.server.client.domain.SearchQuery;
  * @author sihai
  * 
  */
-public class SearchQueryRequest extends GenericJson {
+public class SearchQueryRequest extends Request {
 
 	public ActivityRequestData activityRequestData;
 	public ApiaryFields commonFields;

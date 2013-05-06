@@ -7,6 +7,8 @@ package com.galaxy.meetup.server.client.v2.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.sun.corba.se.spi.ior.ObjectId;
+
 /**
  * 
  * @author sihai
@@ -40,6 +42,10 @@ public class BaseDO implements Serializable {
 
 	public void set_id(String _id) {
 		this._id = _id;
+	}
+	
+	public void set_id(ObjectId _id) {
+		this._id = _id.toString();
 	}
 
 	public Date getCreateTime() {

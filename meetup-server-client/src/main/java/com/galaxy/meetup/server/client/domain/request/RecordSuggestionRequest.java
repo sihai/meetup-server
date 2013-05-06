@@ -6,14 +6,14 @@ package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.DataSuggestionAction;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  * 
  */
-public class RecordSuggestionRequest extends GenericJson {
+public class RecordSuggestionRequest extends Request {
 
 	public ApiaryFields commonFields;
 	public Boolean enableTracing;

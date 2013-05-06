@@ -6,7 +6,7 @@ package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.ClientEmbedOptions;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.GetActivitiesCommonParams;
 import com.galaxy.meetup.server.client.domain.RenderContext;
 
@@ -16,7 +16,7 @@ import com.galaxy.meetup.server.client.domain.RenderContext;
  * @author sihai
  * 
  */
-public class GetActivityRequest extends GenericJson {
+public class GetActivityRequest extends Request {
 
 	public String activityId;
 	public Long activityMaxResharers;

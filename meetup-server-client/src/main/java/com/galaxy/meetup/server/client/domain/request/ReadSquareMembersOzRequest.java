@@ -7,14 +7,14 @@ package com.galaxy.meetup.server.client.domain.request;
 import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 /**
  * 
  * @author sihai
  * 
  */
-public class ReadSquareMembersOzRequest extends GenericJson {
+public class ReadSquareMembersOzRequest extends Request {
 
 	public ApiaryFields commonFields;
 	public Boolean consistentRead;

@@ -10,7 +10,7 @@ import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.EditSegments;
 import com.galaxy.meetup.server.client.domain.EmbedClientItem;
 import com.galaxy.meetup.server.client.domain.GadgetsData;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.Location;
 import com.galaxy.meetup.server.client.domain.PhotoServiceShareActionData;
 import com.galaxy.meetup.server.client.domain.RequestsPostActivityRequestAttribution;
@@ -23,7 +23,7 @@ import com.galaxy.meetup.server.client.domain.UpdateMetadata;
  * @author sihai
  * 
  */
-public class PostActivityRequest extends GenericJson {
+public class PostActivityRequest extends Request {
 
 	public String aclJson;
 	public String activityToReshare;

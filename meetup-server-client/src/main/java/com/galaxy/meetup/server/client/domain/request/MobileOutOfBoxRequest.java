@@ -7,7 +7,7 @@ package com.galaxy.meetup.server.client.domain.request;
 import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.OutOfBoxAction;
 
 /**
@@ -15,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.OutOfBoxAction;
  * @author sihai
  * 
  */
-public class MobileOutOfBoxRequest extends GenericJson {
+public class MobileOutOfBoxRequest extends Request {
 
 	public OutOfBoxAction action;
 	public String clientType;

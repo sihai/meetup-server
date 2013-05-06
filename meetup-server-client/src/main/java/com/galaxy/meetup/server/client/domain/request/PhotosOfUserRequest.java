@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.RequestsPhotoOptions;
 
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.RequestsPhotoOptions;
  * @author sihai
  * 
  */
-public final class PhotosOfUserRequest extends GenericJson {
+public final class PhotosOfUserRequest extends Request {
 
 	public String approvedResumeToken;
 	public ApiaryFields commonFields;

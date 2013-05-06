@@ -27,6 +27,13 @@ public interface UserService {
 	
 	/**
 	 * 
+	 * @param userName
+	 * @return
+	 */
+	User get(String userName);
+	
+	/**
+	 * 
 	 * @param user
 	 * @throws ServerException
 	 */

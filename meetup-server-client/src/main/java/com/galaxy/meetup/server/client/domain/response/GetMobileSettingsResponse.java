@@ -4,7 +4,7 @@
  */
 package com.galaxy.meetup.server.client.domain.response;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.MobilePreference;
 import com.galaxy.meetup.server.client.domain.MobileSettingsApplication;
 import com.galaxy.meetup.server.client.domain.MobileSettingsUser;
@@ -17,7 +17,7 @@ import com.galaxy.meetup.server.client.domain.TraceRecords;
  * @author sihai
  * 
  */
-public class GetMobileSettingsResponse extends GenericJson {
+public class GetMobileSettingsResponse extends Response {
 
 	public MobileSettingsApplication application;
 	public TraceRecords backendTrace;

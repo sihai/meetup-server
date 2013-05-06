@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.AbuseSignals;
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.PriceLevelsProto;
 import com.galaxy.meetup.server.client.domain.PriceProto;
 
@@ -17,7 +17,7 @@ import com.galaxy.meetup.server.client.domain.PriceProto;
  * @author sihai
  * 
  */
-public class WritePlaceReviewRequest extends GenericJson {
+public class WritePlaceReviewRequest extends Request {
 
 	public AbuseSignals abuseSignals;
 	public String cid;

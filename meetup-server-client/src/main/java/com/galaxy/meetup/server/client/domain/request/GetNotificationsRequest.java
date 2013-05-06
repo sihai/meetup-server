@@ -8,7 +8,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.NotificationsResponseOptions;
 
 /**
@@ -16,7 +16,7 @@ import com.galaxy.meetup.server.client.domain.NotificationsResponseOptions;
  * @author sihai
  * 
  */
-public class GetNotificationsRequest extends GenericJson {
+public class GetNotificationsRequest extends Request {
 
 	public BigInteger clientVersion;
 	public ApiaryFields commonFields;

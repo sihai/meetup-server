@@ -45,6 +45,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public User get(String userName) {
+		return userManager.get(userName);
+	}
+
+
+	@Override
 	public void publishUserLocation(String userName, Location location) throws MeetupException {
 		User user = userManager.get(userName);
 		if(null == user) {

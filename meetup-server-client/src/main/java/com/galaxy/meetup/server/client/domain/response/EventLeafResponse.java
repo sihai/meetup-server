@@ -6,7 +6,7 @@ package com.galaxy.meetup.server.client.domain.response;
 
 import java.util.List;
 
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.response.Response;
 import com.galaxy.meetup.server.client.domain.PlusEvent;
 import com.galaxy.meetup.server.client.domain.Stream;
 import com.galaxy.meetup.server.client.domain.TraceRecords;
@@ -17,7 +17,7 @@ import com.galaxy.meetup.server.client.domain.Update;
  * @author sihai
  * 
  */
-public final class EventLeafResponse extends GenericJson {
+public final class EventLeafResponse extends Response {
 
 	public String activityId;
 	public TraceRecords backendTrace;

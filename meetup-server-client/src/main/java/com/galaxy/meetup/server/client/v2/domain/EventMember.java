@@ -31,7 +31,7 @@ public class EventMember extends BaseDO {
 	 * @see com.galaxy.meetup.server.client.v2.enums.EventMemberRole
 	 */
 	private Integer role;
-
+	
 	public String getEventId() {
 		return eventId;
 	}

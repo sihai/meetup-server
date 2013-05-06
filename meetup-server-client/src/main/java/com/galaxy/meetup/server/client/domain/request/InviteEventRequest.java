@@ -6,7 +6,7 @@ package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.EventSelector;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.SharingRoster;
 
 
@@ -15,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.SharingRoster;
  * @author sihai
  * 
  */
-public class InviteEventRequest extends GenericJson {
+public class InviteEventRequest extends Request {
 
 	public String aclDelta;
 	public ApiaryFields commonFields;

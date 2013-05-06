@@ -8,7 +8,7 @@ import com.galaxy.meetup.server.client.domain.ActivityFilters;
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.ClientEmbedOptions;
 import com.galaxy.meetup.server.client.domain.FieldRequestOptions;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.NearbyStreamRequestLatLongE7;
 import com.galaxy.meetup.server.client.domain.UpdateFilter;
 
@@ -18,7 +18,7 @@ import com.galaxy.meetup.server.client.domain.UpdateFilter;
  * @author sihai
  * 
  */
-public final class NearbyStreamRequest extends GenericJson {
+public final class NearbyStreamRequest extends Request {
 
 	public ActivityFilters activityFilters;
 	public ApiaryFields commonFields;

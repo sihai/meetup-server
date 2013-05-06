@@ -9,12 +9,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * 
  * @author sihai
  *
  */
 public class LaogeDelayedExecutor {
+
+	private  final   Log logger=LogFactory.getLog(getClass());
 
 	public int DEFAULT_THREAD_COUNT = 2;
 	
@@ -49,10 +54,10 @@ public class LaogeDelayedExecutor {
 							LaogeDelayedTask task = taskQueue.take();
 							task.run();
 						} catch (InterruptedException e) {
-							// TODO log
+							logger.error(e.getMessage(), e);
 							Thread.currentThread().interrupt();
 						} catch (Throwable t) {
-							// TODO log
+							logger.error(t.getMessage(), t);
 						}
 					}
 				}
@@ -66,7 +71,8 @@ public class LaogeDelayedExecutor {
 	 */
 	public void delay() {
 		// 10s
-		taskQueue.put(new LaogeDelayedTask(System.currentTimeMillis() + 10 * 1000));
+		System.out.println("wwww");
+		taskQueue.put(new LaogeDelayedTask(10 * 1000));
 	}
 	
 	/**
@@ -87,7 +93,7 @@ public class LaogeDelayedExecutor {
 	
 	/**
 	 * 可以扩展LaogeTask加入更多的业务参数
-	 * @author sihai
+	 * @author david
 	 *
 	 */
 	private class LaogeDelayedTask implements Runnable, Delayed {
@@ -113,7 +119,7 @@ public class LaogeDelayedExecutor {
 		
 		@Override
 		public void run() {
-			// 在这里执行老哥你要执行的
+		  System.out.println("Haha");
 		}
 
 		@Override
@@ -128,6 +134,22 @@ public class LaogeDelayedExecutor {
 		@Override
 		public long getDelay(TimeUnit unit) {
 			return unit.convert( delayed - ( System.currentTimeMillis() - createTime ), TimeUnit.MILLISECONDS );
+		}
+	}
+	
+	//===================================================================
+	//						Test
+	//===================================================================
+	public static void main(String[] args) {
+		LaogeDelayedExecutor delayedExecutor = new LaogeDelayedExecutor();
+		delayedExecutor.initialize();
+		delayedExecutor.delay();
+		
+		try {
+			Thread.currentThread().join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 	}
 }

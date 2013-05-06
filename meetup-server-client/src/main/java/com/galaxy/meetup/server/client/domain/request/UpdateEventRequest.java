@@ -5,7 +5,7 @@
 package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
 import com.galaxy.meetup.server.client.domain.PlusEvent;
 
 
@@ -14,7 +14,7 @@ import com.galaxy.meetup.server.client.domain.PlusEvent;
  * @author sihai
  * 
  */
-public class UpdateEventRequest extends GenericJson {
+public class UpdateEventRequest extends Request {
 
 	public ApiaryFields commonFields;
 	public Boolean enableTracing;

@@ -6,7 +6,8 @@ package com.galaxy.meetup.server.client.domain.request;
 
 import com.galaxy.meetup.server.client.domain.ApiaryFields;
 import com.galaxy.meetup.server.client.domain.EventSelector;
-import com.galaxy.meetup.server.client.domain.GenericJson;
+import com.galaxy.meetup.server.client.v2.request.Request;
+import com.galaxy.meetup.server.client.v2.request.Request;
 
 
 /**
@@ -14,7 +15,7 @@ import com.galaxy.meetup.server.client.domain.GenericJson;
  * @author sihai
  *
  */
-public class DeleteEventRequest extends GenericJson {
+public class DeleteEventRequest extends Request {
 
 	public ApiaryFields commonFields;
 	
