@@ -85,6 +85,11 @@
             <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>  
         </init-param>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>pushGateway</servlet-name>
+		<servlet-class>com.openteach.meetup.server.webapp.push.PushGateway</servlet-class>
+	</servlet>
 
 	<!-- ====================================================== -->
 	<!-- Servlet Mappings                                       -->
@@ -92,6 +97,11 @@
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>*.jhtml</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>pushGateway</servlet-name>
+		<url-pattern>/push_gateway.ws</url-pattern>
 	</servlet-mapping>
 
 	<!-- ====================================================== -->

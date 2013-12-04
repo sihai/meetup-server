@@ -1,0 +1,1 @@
+http://10.68.187.85/gateway.jhtml?_user_={%22id%22:%2212345678%22}&_sys_command_=_sync_nearby_people_&_request_={%22currentLocation%22:{%22longitude%22:120.0216077,%22latitude%22:30.282255050000003}}

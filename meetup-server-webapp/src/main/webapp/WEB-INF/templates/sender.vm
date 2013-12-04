@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<title>Sender</title>
+	</head>
+	<body>
+		<form action="/message_action.jhtml" method="post">
+			<textarea></textarea>
+			<input type="submit" value="发送"/>
+		</form>
+	</body>
+</html>

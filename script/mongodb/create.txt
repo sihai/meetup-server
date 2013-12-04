@@ -1,14 +1,35 @@
 use meetup;
 db.addUser("meetup", "meetup");
-db.createCollecion("user");
-db.user.ensureIndex({ name : 1 });
+
+db.createCollection("user");
+db.user.ensureIndex({ email : 1 });
+db.user.ensureIndex({ mobile : 1 });
 db.user.ensureIndex({ currentLocation : "2d" });
 
-db.createCollecion("event");
+db.createCollection("location_record");
+db.location_record.ensureIndex({ userId : 1 });
+db.location_record.ensureIndex({ createTime : 1 });
+
+db.createCollection("event");
 db.event.ensureIndex({ publisher : 1 });
 db.event.ensureIndex({ location : "2d" });
 
 
-db.createCollecion("event_member");
-db.user.ensureIndex({ eventId : 1 });
-db.user.ensureIndex({ userName : 1 });
+db.createCollection("event_member");
+db.event_member.ensureIndex({ eventId : 1 });
+db.event_member.ensureIndex({ userId : 1 });
+
+db.createCollection("album");
+db.album.ensureIndex({ ownerUserId : 1 });
+db.album.ensureIndex({ contentLocation : "2d" });
+
+db.createCollection("photo");
+db.photo.ensureIndex({ albumId : 1 });
+db.photo.ensureIndex({ ownerUserId : 1 });
+db.photo.ensureIndex({ contentLocation : "2d" });
+
+db.createCollection("friend");
+db.friend.ensureIndex({ user0Id : 1 , user1Id : 1}, { unique: true });
+
+db.createCollection("message");
+db.message.ensureIndex({ sender : 1 , receiver : 1});

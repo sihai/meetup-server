@@ -35,6 +35,10 @@
 		<!-- 					tddl 	   		   			   -->
 		<!-- ================================================= -->
 		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-websocket</artifactId>
+		</dependency>
 		
 		<!-- ================================================= -->
 		<!-- 					Log 	   					   -->
